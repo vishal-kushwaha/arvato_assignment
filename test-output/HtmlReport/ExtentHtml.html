@@ -1,0 +1,1295 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jan 18, 2020 04:21:44 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>12</span> scenario(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='97.059%'><span class='strong'>66</span> step(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='2.941%'>2</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Bank account Validation</span>
+						<span class='test-time'>Jan 18, 2020 04:21:44 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+    <a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+    <a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+    <a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+    <a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='test-desc'>Validates and evaluates the account in the context of direct debit payment. Allows to submit IBAN and check if it’s valid. Method has 2-step validation:\n
+  - length based validation, bank account considered to be valid if its length is between 7 and 34 chars, 400.00x error returned if validation fails.\n
+  - external validation. 200(OK) with non empty riskCheckMessages returned if validation fails, otherwise isValid = true returned.\n
+  - Validation works only for accounts written in IBAN format. Validation supports IBANs from the countries Austria, Germany, Switzerland, Finland, Sweden, Norway, and Denmark. Response message with error code 200.909 is returned If country is not supported.</div>
+<div class='scenario node' test-id='2' status='pass'>
+    <span class='duration right label'>0h 0m 4s+767ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request with valid IBAN account of supported country</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='3' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='4' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aAccountFromCountry(String,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And "valid IBAN" account from "supported" country</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='5' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='6' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 200 status code and "no" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='7' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.bankAccountIs(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And bank account is "valid"</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='8' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": "DE91100000000123456789"
+}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 23
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: ea9eff20-b139-4961-b7f5-8ca4e9b1abc6
+Date: Sat, 18 Jan 2020 10:51:47 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:32 GMT;path=/;secure;httponly
+
+{
+    "isValid": true
+}</div>
+        </li>
+    </ul>
+</div>
+<div class='scenario node' test-id='9' status='pass'>
+    <span class='duration right label'>0h 0m 1s+863ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request with invalid JWT token</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='10' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "invalid" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='11' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aAccountFromCountry(String,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And "valid IBAN" account from "supported" country</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='12' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='13' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 401 status code and "no" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='14' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.bodyContainsInvalidAuthorizationMessage()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And body contains invalid authorization message</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='15' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": "DE91100000000123456789"
+}
+HTTP/1.1 401 Unauthorized
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 68
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 66cf2837-5a3e-4aaa-bdd5-bd4db1e5c870
+Date: Sat, 18 Jan 2020 10:51:49 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:34 GMT;path=/;secure;httponly
+
+{
+    "message": "Authorization has been denied for this request."
+}</div>
+        </li>
+    </ul>
+</div>
+<div class='scenario node' test-id='16' status='pass'>
+    <span class='duration right label'>0h 0m 1s+834ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request without JWT token</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='17' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "no" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='18' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aAccountFromCountry(String,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And "valid IBAN" account from "supported" country</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='19' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='20' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 401 status code and "no" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='21' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.bodyContainsInvalidAuthorizationMessage()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And body contains invalid authorization message</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='22' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": "DE91100000000123456789"
+}
+HTTP/1.1 401 Unauthorized
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 68
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 47b0adc8-68d1-4570-a0f4-1488930545af
+Date: Sat, 18 Jan 2020 10:51:51 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:36 GMT;path=/;secure;httponly
+
+{
+    "message": "Authorization has been denied for this request."
+}</div>
+        </li>
+    </ul>
+</div>
+<div class='scenario outline node' test-id='23' status='fail'>
+    <span class='duration right label'>0h 0m 10s+872ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario Outline: request with non-IBAN account of different lengths</div>
+        <table class='runtime-table table-striped table'><tr><td>length</td><td>statusCode</td><td>errorCode</td></tr><tr><td>6</td><td>400</td><td>400.006</td></tr><tr><td>7</td><td>200</td><td>200.908</td></tr><tr><td>8</td><td>200</td><td>200.908</td></tr><tr><td>33</td><td>200</td><td>200.908</td></tr><tr><td>34</td><td>200</td><td>200.908</td></tr><tr><td>35</td><td>400</td><td>400.005</td></tr></table>
+    </div>
+    <ul class='steps'>
+        <li test-id='24' class='node scenario pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='25' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='26' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 6</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='27' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='28' class='gc then pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 400 status code and "400.006" error code</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='29' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 898682
+}
+HTTP/1.1 400 Bad Request
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 287
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: f91b62f5-31c6-4a87-919a-e574868995b1
+Date: Sat, 18 Jan 2020 10:51:53 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:38 GMT;path=/;secure;httponly
+
+[
+    {
+        "type": "BusinessError",
+        "code": "400.006",
+        "message": "A string value with minimum length 7 is required.",
+        "customerFacingMessage": "Ein Wert muss eingetragen werden",
+        "actionCode": "AskConsumerToReEnterData",
+        "fieldReference": "bankAccount"
+    }
+]</div>
+                    </li>
+            </ul>
+        </li>
+        <li test-id='30' class='node scenario pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='31' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='32' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 7</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='33' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='34' class='gc then pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 200 status code and "200.908" error code</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='35' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 9265801
+}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 407
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: f7aa4df3-b5f5-4b8f-8b9c-3c7f4ff8a14f
+Date: Sat, 18 Jan 2020 10:51:55 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:40 GMT;path=/;secure;httponly
+
+{
+    "isValid": false,
+    "riskCheckMessages": [
+        {
+            "type": "BusinessError",
+            "code": "200.908",
+            "message": "A string value with minimum length {value} is required.",
+            "customerFacingMessage": "Die eingegebenen Bankdaten sind ungültig, bitte überprüfen und korrigieren.",
+            "actionCode": "AskConsumerToReEnterData",
+            "fieldReference": "bankAccount"
+        }
+    ]
+}</div>
+                    </li>
+            </ul>
+        </li>
+        <li test-id='36' class='node scenario fail' status='fail'>
+            <div class="step-name" title=""><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='37' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='38' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 8</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='39' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='40' class='gc then fail' status='fail'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then api returns 200 status code and "200.908" error code</h6>
+                            <textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at arvato.assignment.ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(ValidateBankAccountStepDefinitions.java:108)
+	at ?.api returns 200 status code and "200.908" error code(classpath:arvato/assignment/verify_bank_account_validation.feature:32)
+</textarea>
+                                                </li>
+                    <li test-id='41' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 00811253
+}
+HTTP/1.1 400 Bad Request
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 234
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: a2c7966d-24d8-4a40-bd03-bc6ed533f194
+Date: Sat, 18 Jan 2020 10:51:57 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:41 GMT;path=/;secure;httponly
+
+[
+    {
+        "type": "BusinessError",
+        "code": "400.000",
+        "message": "Unknown error.",
+        "customerFacingMessage": "Unknown error.",
+        "actionCode": "AskConsumerToReEnterData",
+        "fieldReference": "bankAccount"
+    }
+]</div>
+                    </li>
+            </ul>
+        </li>
+        <li test-id='42' class='node scenario fail' status='fail'>
+            <div class="step-name" title=""><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='43' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='44' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 33</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='45' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='46' class='gc then fail' status='fail'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then api returns 200 status code and "200.908" error code</h6>
+                            <textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at arvato.assignment.ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(ValidateBankAccountStepDefinitions.java:108)
+	at ?.api returns 200 status code and "200.908" error code(classpath:arvato/assignment/verify_bank_account_validation.feature:32)
+</textarea>
+                                                </li>
+                    <li test-id='47' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 029586789979389898561216585952200
+}
+HTTP/1.1 400 Bad Request
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 234
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: c3d411ff-0062-40be-9b11-15927a46aff4
+Date: Sat, 18 Jan 2020 10:51:58 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:43 GMT;path=/;secure;httponly
+
+[
+    {
+        "type": "BusinessError",
+        "code": "400.000",
+        "message": "Unknown error.",
+        "customerFacingMessage": "Unknown error.",
+        "actionCode": "AskConsumerToReEnterData",
+        "fieldReference": "bankAccount"
+    }
+]</div>
+                    </li>
+            </ul>
+        </li>
+        <li test-id='48' class='node scenario pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='49' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='50' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 34</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='51' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='52' class='gc then pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 200 status code and "200.908" error code</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='53' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 8875437962806431754120869634185411
+}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 384
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 0a30e03c-9e8d-4d84-9d63-2fb4741b4ac6
+Date: Sat, 18 Jan 2020 10:52:00 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:45 GMT;path=/;secure;httponly
+
+{
+    "isValid": false,
+    "riskCheckMessages": [
+        {
+            "type": "BusinessError",
+            "code": "200.908",
+            "message": "Account number is not supported.",
+            "customerFacingMessage": "Die eingegebenen Bankdaten sind ungültig, bitte überprüfen und korrigieren.",
+            "actionCode": "AskConsumerToReEnterData",
+            "fieldReference": "bankAccount"
+        }
+    ]
+}</div>
+                    </li>
+            </ul>
+        </li>
+        <li test-id='54' class='node scenario pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>request with non-IBAN account of different lengths</div>
+            <ul class='gc steps'>
+                    <li test-id='55' class='gc given pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='56' class='gc and pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.nonIBANAccountOfGivenLength(int)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And non-IBAN account of given length 35</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='57' class='gc when pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='58' class='gc then pass' status='pass'>
+                        <h6 class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 400 status code and "400.005" error code</h6>
+                            <div class="node-step"></div>
+                    </li>
+                    <li test-id='59' class='gc * pass' status='pass'>
+                        <h6 class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</h6>
+                            <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": 87947573662435413031367695275322333
+}
+HTTP/1.1 400 Bad Request
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 295
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: b1dc2bfe-f73e-4fff-8e8a-9afab86659d9
+Date: Sat, 18 Jan 2020 10:52:02 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:47 GMT;path=/;secure;httponly
+
+[
+    {
+        "type": "BusinessError",
+        "code": "400.005",
+        "message": "A string value exceeds maximum length of 34.",
+        "customerFacingMessage": "Maximale Feldlänge 34 Zeichen überschritten",
+        "actionCode": "AskConsumerToReEnterData",
+        "fieldReference": "bankAccount"
+    }
+]</div>
+                    </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class='scenario node' test-id='60' status='pass'>
+    <span class='duration right label'>0h 0m 1s+559ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request with valid IBAN account of unsupported country</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='61' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='62' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aAccountFromCountry(String,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And "valid IBAN" account from "unsupported" country</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='63' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='64' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 200 status code and "200.909" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='65' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.bankAccountIs(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And bank account is "invalid"</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='66' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.riskCheckMessagesIsNonEmpty()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And riskCheckMessages is non-empty</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='67' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": "GB09HAOE91311808002317"
+}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 434
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 2a68c757-3878-4acd-bdb6-f2fb727ba173
+Date: Sat, 18 Jan 2020 10:52:03 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:49 GMT;path=/;secure;httponly
+
+{
+    "isValid": false,
+    "riskCheckMessages": [
+        {
+            "type": "BusinessError",
+            "code": "200.909",
+            "message": "Account number from this country is not supported for this AfterPay merchant.",
+            "customerFacingMessage": "Die Kontonummer dieses Landes wird für diesen AfterPay-Händler nicht unterstützt",
+            "actionCode": "AskConsumerToReEnterData",
+            "fieldReference": "bankAccount"
+        }
+    ]
+}</div>
+        </li>
+    </ul>
+</div>
+<div class='scenario node' test-id='68' status='pass'>
+    <span class='duration right label'>0h 0m 1s+623ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request with invalid IBAN account</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='69' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='70' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aAccountFromCountry(String,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And "invalid IBAN" account from "any" country</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='71' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='72' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 200 status code and "200.908" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='73' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.riskCheckMessagesIsNonEmpty()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And riskCheckMessages is non-empty</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='74' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.bankAccountIs(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And bank account is "invalid"</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='75' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "bankAccount": "CH5604835002345678009"
+}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 378
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 45d5119b-5fb3-4919-873b-cd456de2b619
+Date: Sat, 18 Jan 2020 10:52:05 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:50 GMT;path=/;secure;httponly
+
+{
+    "isValid": false,
+    "riskCheckMessages": [
+        {
+            "type": "BusinessError",
+            "code": "200.908",
+            "message": "Value format is incorrect.",
+            "customerFacingMessage": "Die eingegebenen Bankdaten sind ungültig, bitte überprüfen und korrigieren.",
+            "actionCode": "AskConsumerToReEnterData",
+            "fieldReference": "bankAccount"
+        }
+    ]
+}</div>
+        </li>
+    </ul>
+</div>
+<div class='scenario node' test-id='76' status='pass'>
+    <span class='duration right label'>0h 0m 1s+725ms</span>
+    <div class="bdd-test">
+        <div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: request with empty body</div>
+    </div>
+    <ul class='steps'>
+        <li test-id='77' class='node given pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.aRequestWithJWTToken(String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given a request with "valid" JWT token</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='78' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestHasEmptyBody()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And request has empty body</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='79' class='node when pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.requestIsPostedToAPI()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When request is posted to api</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='80' class='node then pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(int,String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then api returns 400 status code and "400.001" error code</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='81' class='node and pass' status='pass'>
+            <div class="step-name" title="ValidateBankAccountStepDefinitions.riskCheckMessagesIsNonEmpty()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And riskCheckMessages is non-empty</div>
+                <div class="node-step"></div>
+        </li>
+        <li test-id='82' class='node * pass' status='pass'>
+            <div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>ValidateBankAccountStepDefinitions.afterScenario(Scenario)</div>
+                <div class="node-step">Request method:	POST
+Request URI:	https://dev.horizonafs.com/ecommercerest/api/v3/validate/bank-account
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Cache-Control=no-cache
+				X-Auth-Key=Q7DaxRnFls6IpwSW1SQ2FaTFOf7UdReAFNoKY68L
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 400 Bad Request
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 277
+Content-Type: application/json; charset=utf-8
+Expires: -1
+SessionId: 4aa9c151-de2a-4465-b02c-2c1e2bfe12ad
+Date: Sat, 18 Jan 2020 10:52:06 GMT
+Set-Cookie: NSC_efw_ipsjapobgt_dpn_iuuqt_WJQ=ffffffffc3a00ba145525d5f4f58455e445a4a42378b;expires=Sat, 18-Jan-2020 11:49:52 GMT;path=/;secure;httponly
+
+[
+    {
+        "type": "BusinessError",
+        "code": "400.001",
+        "message": "The body of the request is missing, or its format is invalid.",
+        "customerFacingMessage": "The body of the request is missing, or its format is invalid.",
+        "actionCode": "Unavailable"
+    }
+]</div>
+        </li>
+    </ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>java.lang.AssertionError</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 18, 2020 04:21:58 PM</td>
+										<td class='linked' test-id='40'>Then api returns 200 status code and "200.908" error code</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at arvato.assignment.ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(ValidateBankAccountStepDefinitions.java:108)
+	at ?.api returns 200 status code and "200.908" error code(classpath:arvato/assignment/verify_bank_account_validation.feature:32)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Jan 18, 2020 04:22:00 PM</td>
+										<td class='linked' test-id='46'>Then api returns 200 status code and "200.908" error code</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at arvato.assignment.ValidateBankAccountStepDefinitions.apiReturnsStatusCodeAndErrorCode(ValidateBankAccountStepDefinitions.java:108)
+	at ?.api returns 200 status code and "200.908" error code(classpath:arvato/assignment/verify_bank_account_validation.feature:32)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>68</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 18, 2020 04:21:44 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 18, 2020 04:22:08 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 24s+573ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 1,
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 12,
+				passChild: 12,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 68,
+				passGrandChild: 66,
+				failGrandChild: 2,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 2,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Bank account Validation":24.25
+			};
+		</script>
+	
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>
